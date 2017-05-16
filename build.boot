@@ -1,6 +1,12 @@
-(def +project+ 'com.andrewmcveigh/cljs-time)
+(set-env! :dependencies '[[adzerk/bootlaces "0.1.13" :scope "test"]])
+
+(require '[adzerk.bootlaces :refer :all])
+
+(def +project+ 'org.clojars.borkdude/cljs-time)
 (def +version+ "0.5.0-SNAPSHOT")
 (def +description+ "A clj-time inspired date library for clojurescript.")
+
+(bootlaces! +version+)
 
 (def dependencies
   '[[org.clojure/clojure "1.8.0" :scope "provided"]
@@ -62,7 +68,7 @@
         :metadata {:doc/format :markdown}
         :themes [:rdash]
         :source-uri "https://github.com/andrewmcveigh/cljs-time/blob/v{version}/{filepath}#L{line}"}
- push {:repo "clojars"}
+ ;; push {:repo "clojars"}
  target {:dir #{"target"}})
 
 (deftask compare-perf []
